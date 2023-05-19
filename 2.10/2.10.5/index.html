@@ -15,9 +15,10 @@
 }
 <script>
 	const age = prompt('Сколько тебе лет?');
+	const beforeRetired = 60 - age;
 
 	if (age > 0) {
-		alert(`До пенсии осталось ${60 - age} лет`);
+		alert(`До пенсии осталось ${beforeRetired} лет`);
 	} else {
 		alert(`Введенные данные неправильные, попробуйте еще раз`);
 	}
