@@ -18,18 +18,18 @@
 <script>
 	let result = 10;
 
-	alert('У вас есть 10 очков');
+	alert(`У вас есть ${result} очков`);
 	result -= prompt('Сколько сейчас нужно отнять?');
 
-	if (result >= 0) {
+	if (result > 0) {
 		alert(`У вас осталось ${result} очков`);
 		result -= prompt('Сколько сейчас нужно отнять?');
 
-		if (result >= 0) {
+		if (result > 0) {
 			alert(`У вас осталось ${result} очков`);
 			result -= prompt('Сколько сейчас нужно отнять?');
 
-			if (result >= 0) {
+			if (result > 0) {
 				alert(`У вас осталось ${result} очков`);
 			} else {
 				alert('Игра закончена');
