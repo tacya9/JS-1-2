@@ -15,25 +15,19 @@
 "У вас Х очков"
 <script>
 	let result = Number(prompt('Введите стартовые очки'));
-	let hasPoints = confirm('Добавить или отнять?');
+	let shouldIncreasePoints = confirm('Добавить или отнять?');
 
-	if (hasPoints === true) {
+	if (shouldIncreasePoints) {
 		result += 10;
 	} else {
 		result -= 10;
 	}
 
-	hasPoints = confirm('Добавить или отнять?');
+	shouldIncreasePoints = confirm('Добавить или отнять?');
 
-	if (hasPoints === true) {
-		result += 10;
-	} else {
-		result -= 10;
-	}
+	result = (shouldIncreasePoints === true) ? result + 10 : result - 10;
 
-	hasPoints = confirm('Добавить или отнять?');
-
-	if (hasPoints === true) {
+	if (confirm('Добавить или отнять?')) {
 		result += 10;
 	} else {
 		result -= 10;
