@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.12
+Выводится 3 одинаковых сообщения: "Введите число".
+После них вывести сообщение с текстом:
+"Максимальное значение было = Х"
+<script>
+	let result = +prompt('Введите число');
+	let number = +prompt('Введите число');
+
+	if (result < number) {
+		result = number;
+	}
+
+	number = +prompt('Введите число');
+	if (result <= number) {
+		result = number;
+	}
+
+	alert(`Максимальное значение было = ${result}`);
+</script>
+</body>
+</html>
