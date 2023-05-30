@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.13
+В самом начале выводится алерт: "Повторите выбранные цифры: 2, 1, 3"
+Дальше выводятся 3 сообщения с просьбой ввести цифру: "Введите цифру"
+И если все 3 цифры введены в таком же порядке, тогда выводится алерт: "Вы выйграли!"
+Иначе алерт: "Конец игры".
+В коде сразу объявить переменные с этими значениями: number1 = 2, number2 = 1, number3 = 3 и дальше использовать их в
+коде.
+<script>
+	const number1 = 2;
+	const number2 = 1;
+	const number3 = 3;
+	let result;
+
+	alert('Повторите выбранные цифры: 2, 1, 3');
+
+	result = +prompt('Введите цифру');
+
+	if (result === number1) {
+		result = +prompt('Введите цифру');
+
+		if (result === number2) {
+			result = +prompt('Введите цифру');
+
+			if (result === number3) {
+				alert('Вы выйграли!');
+			} else {
+				alert('Конец игры');
+			}
+		} else {
+			alert('Конец игры');
+		}
+	} else {
+		alert('Конец игры');
+	}
+</script>
+</body>
+</html>
