@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.11
+Выводится 3 сообщения с двумя кнопками OK и ОТМЕНА.
+После них вывести сообщение с текстом:
+"Кнопка ОК была нажата Х раз, ОТМЕНА - Y раз"
+<script>
+	let okNumbers = 0;
+	let cancelNumbers = 0;
+
+	if (confirm()) {
+		okNumbers += 1;
+	} else {
+		cancelNumbers += 1;
+	}
+
+	if (confirm()) {
+		++okNumbers;
+	} else {
+		++cancelNumbers;
+	}
+
+	if (confirm()) {
+		++okNumbers;
+	} else {
+		++cancelNumbers;
+	}
+
+	alert(`Кнопка ОК была нажата ${okNumbers} раз, ОТМЕНА - ${cancelNumbers} раз`);
+</script>
+</body>
+</html>
