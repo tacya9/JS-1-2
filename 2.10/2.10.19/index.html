@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.19
+Сообщение: "Какой месяц сейчас" (вводятся числа 1-12: зима-12,1,2; весна-3,4,5; лето-6,7,8; осень-9,10,11)
+Сообщение с кнопками ОК и ОТМЕНА: "Сейчас день?" (ОК-день; ОТМЕНА-ночь)
+Сообщение: "Какая температура на улице" (вводятся любые числа: холодно<-5; средне>=-5&<=5; тепло>5)
+А потом выводится алерт: "Сейчас [зима,весна,лето,осень], [день,ночь], [холодно,средне,тепло]"
+Если где либо введено неверное значение, тогда выводится только один алерт: "Ошибка!"
+<script>
+	const month = +prompt('Какой месяц сейчас');
+	const isDay = confirm('Сейчас день?');
+	const temperature = +prompt('Какая температура на улице');
+	let timeYear;
+	let dayOrNight;
+	let warmOrCold;
+
+	if (month >= 9 && month <= 11) {
+		timeYear = 'осень';
+	} else if (month >= 3 && month <= 5) {
+		timeYear = 'весна';
+	} else if (month >= 6 && month <= 8) {
+		timeYear = 'лето';
+	} else {
+		timeYear = 'зима';
+	}
+
+	if (isDay) {
+		dayOrNight = 'день';
+	} else {
+		dayOrNight = 'ночь';
+	}
+
+	if (temperature < -5) {
+		warmOrCold = 'холодно';
+	} else if (temperature >= -5 && temperature <= 5) {
+		warmOrCold = 'средне';
+	} else if (temperature > 5){
+		warmOrCold = 'тепло';
+	}
+
+	alert(`Сейчас ${timeYear}, ${dayOrNight}, ${warmOrCold}`);
+</script>
+</body>
+</html>
