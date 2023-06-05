@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.16
+Сперва выводится сообщение: "Введите последние три цифры пароля", а потом выводится сообщение "Введите первые три цифры
+пароля".
+Потом выводится сообщение: "Вы ввели пароль: XXX-YYY".
+Теперь если весь пароль получился 111-222, то выводится сообщение: "Пароль верный", иначе выводится сообщение: "Ошибка"
+<script>
+	const lastThreeNumbers = prompt('Введите последние три цифры пароля');
+	const firstThreeNumbers = prompt('Введите первые три цифры пароля');
+
+	alert(`Вы ввели пароль: ${firstThreeNumbers}-${lastThreeNumbers}`);
+
+	if (firstThreeNumbers === '111' && lastThreeNumbers === '222') {
+		alert('Пароль верный');
+	} else {
+		alert('Ошибка');
+	}
+</script>
+</body>
+</html>
