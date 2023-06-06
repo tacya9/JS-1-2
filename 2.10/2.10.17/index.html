@@ -14,15 +14,15 @@
 Если введенные числа правильные, тогда выводится сообщение:
 "X - Y = Z" или "X + Y = Z" взависимости от выбранной ранее операции
 <script>
-	const addOrSubtract = confirm('Что сделать? ОК - Сложить, ОТМЕНА - Отнять');
+	const isAdd = confirm('Что сделать? ОК - Сложить, ОТМЕНА - Отнять');
 	const firstNumber = +prompt('Введите первое число');
 	const secondNumber = +prompt('Введите второе число');
 
-	if (firstNumber >= 0 && secondNumber >= 0 && firstNumber != '' && secondNumber != '') {
-		if (addOrSubtract){
-			alert(`${firstNumber}`+ ` + ` +`${secondNumber} = ${firstNumber + secondNumber}`);
+	if (firstNumber >= 0 && secondNumber >= 0) {
+		if (isAdd){
+			alert(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
 		} else {
-			alert(`${firstNumber}`+ ` - ` +`${secondNumber} = ${firstNumber - secondNumber}`);
+			alert(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
 		}
 	} else {
 		alert ('Ошибка');
