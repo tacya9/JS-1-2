@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.14
+Сделать задание 13, но без вложенных if!
+Для этого тебе понадобится еще одна переменная hasMistake.
+И в коде должно быть только 2 алерта в конце, которые выведут сообщение "Конец игры" или "Вы выйграли!".
+<script>
+	const NUMBER_1 = 2;
+	const NUMBER_2 = 1;
+	const NUMBER_3 = 3;
+	let hasMistake = false;
+	let result;
+
+	alert('Повторите выбранные цифры: 2, 1, 3');
+
+	result = +prompt('Введите цифру');
+
+	if (result !== NUMBER_1) {
+		hasMistake = true;
+	}
+
+	result = +prompt('Введите цифру');
+
+	if (result !== NUMBER_2) {
+		hasMistake = true;
+	}
+
+	result = +prompt('Введите цифру');
+
+	if (result !== NUMBER_3) {
+		hasMistake = true;
+	}
+
+	if (hasMistake) {
+		alert('Конец игры');
+	} else {
+		alert('Вы выйграли!');
+	}
+
+</script>
+</body>
+</html>
