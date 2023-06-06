@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.10
+Вопрос: "Сколько очков вы хотите получить:"
+И пользователь вводит любое число (от однозначного до многозначного).
+Потом вывести правильное сообщение:
+"Вы получаете Х очко"
+или
+"Вы получаете Х очка"
+или
+"Вы получаете Х очков"
+<script>
+	let howMuchPoints = prompt('Сколько очков вы хотите получить:');
+
+	if (howMuchPoints > 10 && howMuchPoints < 20) {
+		alert(`Вы получаете ${howMuchPoints} очков`);
+	} else if (howMuchPoints % 10 === 1) {
+		alert(`Вы получаете ${howMuchPoints} очко`);
+	} else if (howMuchPoints % 10 >= 2 && howMuchPoints % 10 <= 4) {
+		alert(`Вы получаете ${howMuchPoints} очка`);
+	} else {
+		alert(`Вы получаете ${howMuchPoints} очков`);
+	}
+</script>
+</body>
+</html>
