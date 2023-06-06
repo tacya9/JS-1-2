@@ -14,14 +14,13 @@
 Где Y - оставшееся сумма.
 Если юзер введет неправильную сумму - тогда вывести сообщение "Сумма неверная, попробуйте еще раз."
 <script>
-	let haveMoney = 100;
-	let withdrawMoney;
+	let resultSum = 100
 
-	if (confirm(`На вашей карточке ${haveMoney} руб. Хотите снять?`)) {
-		withdrawMoney = +prompt('Какую сумму?');
+	if (confirm(`На вашей карточке ${resultSum} руб. Хотите снять?`)) {
+		 const money = +prompt('Какую сумму?');
 
-		if (withdrawMoney <= 100 && withdrawMoney >= 0) {
-			alert(`На вашей карточке осталось ${haveMoney - withdrawMoney} руб.`);
+		if (money <= 100 && money >= 0) {
+			alert(`На вашей карточке осталось ${resultSum - money} руб.`);
 		} else {
 			alert('Сумма неверная, попробуйте еще раз.');
 		}
