@@ -17,7 +17,7 @@
 	let resultSum = 100;
 
 	if (confirm(`На вашей карточке ${resultSum} руб. Хотите снять?`)) {
-		 const money = +prompt('Какую сумму?');
+		const money = +prompt('Какую сумму?');
 
 		if (money <= 100 && money >= 0) {
 			alert(`На вашей карточке осталось ${resultSum - money} руб.`);
