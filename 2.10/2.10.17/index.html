@@ -14,12 +14,12 @@
 Если введенные числа правильные, тогда выводится сообщение:
 "X - Y = Z" или "X + Y = Z" взависимости от выбранной ранее операции
 <script>
-	const isAdd = confirm('Что сделать? ОК - Сложить, ОТМЕНА - Отнять');
+	const isAdding = confirm('Что сделать? ОК - Сложить, ОТМЕНА - Отнять');
 	const firstNumber = +prompt('Введите первое число');
 	const secondNumber = +prompt('Введите второе число');
 
 	if (firstNumber >= 0 && secondNumber >= 0) {
-		if (isAdd){
+		if (isAdding){
 			alert(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
 		} else {
 			alert(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
