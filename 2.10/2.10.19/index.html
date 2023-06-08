@@ -15,35 +15,35 @@
 	const month = +prompt('Какой месяц сейчас');
 	const isDay = confirm('Сейчас день?');
 	const temperature = +prompt('Какая температура на улице');
-	let timeYear;
-	let dayOrNight;
-	let warmOrCold;
+	let season;
+	let timesOfDay;
+	let warmOrColdText;
 
-	if (month >= 9 && month <= 11) {
-		timeYear = 'осень';
+	if (month === 1 || month === 2 || month === 12) {
+		season = 'зима';
 	} else if (month >= 3 && month <= 5) {
-		timeYear = 'весна';
+		season = 'весна';
 	} else if (month >= 6 && month <= 8) {
-		timeYear = 'лето';
+		season = 'лето';
 	} else {
-		timeYear = 'зима';
+		season = 'осень';
 	}
 
 	if (isDay) {
-		dayOrNight = 'день';
+		timesOfDay = 'день';
 	} else {
-		dayOrNight = 'ночь';
+		timesOfDay = 'ночь';
 	}
 
 	if (temperature < -5) {
-		warmOrCold = 'холодно';
+		warmOrColdText = 'холодно';
 	} else if (temperature >= -5 && temperature <= 5) {
-		warmOrCold = 'средне';
+		warmOrColdText = 'средне';
 	} else if (temperature > 5){
-		warmOrCold = 'тепло';
+		warmOrColdText = 'тепло';
 	}
 
-	alert(`Сейчас ${timeYear}, ${dayOrNight}, ${warmOrCold}`);
+	alert(`Сейчас ${season}, ${timesOfDay}, ${warmOrColdText}`);
 </script>
 </body>
 </html>
