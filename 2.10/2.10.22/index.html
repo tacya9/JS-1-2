@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.22
+Сделать без цикла.
+Выводится всегда 4 конферма.
+Если хоть один конферм вернул фолс, то в конце выводится алерт: "Проиграл" иначе алерт: "Выиграл".
+<script>
+	let hasMistake = false;
+
+	if (!confirm()) {
+		hasMistake = true;
+	}
+	if (!confirm()) {
+		hasMistake = true;
+	}
+	if (!confirm()) {
+		hasMistake = true;
+	}
+	if (!confirm()) {
+		hasMistake = true;
+	}
+
+	if (hasMistake) {
+		alert('Проиграл');
+	} else {
+		alert('Выиграл');
+	}
+</script>
+</body>
+</html>
