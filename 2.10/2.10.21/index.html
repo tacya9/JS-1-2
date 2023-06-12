@@ -16,7 +16,7 @@
 	let secondNumber = prompt('Введите вторую цифру двузначного числа');
 	let result;
 
-	if ((firstNumber >= 0 || firstNumber <= 0) && (secondNumber >= 0 || secondNumber <= 0)) {
+	if ((firstNumber >= 0 || firstNumber < 0) && (secondNumber >= 0 || secondNumber < 0)) {
 		if (firstNumber < 0) {
 			firstNumber = String(firstNumber/-1);
 		}
