@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.26
+Выводится 3 промпта.
+Если хоть в одном из них пользователь ввел или слово: "привет" или "hi" или "hello", тогда вывести в конце алерт: " и
+тебе привет".
+Иначе будет алерт: "тогда пока".
+<script>
+	let hasError = true;
+	const hello1 = prompt();
+	const hello2 = prompt();
+	const hello3 = prompt();
+
+	if (hello1 === 'привет' || hello1 === 'hi' || hello1 === 'hello') {
+		hasError = false;
+	}
+
+	if (hello2 === 'привет' || hello2 === 'hi' || hello2 === 'hello') {
+		hasError = false;
+	}
+
+	if (hello3 === 'привет' || hello3 === 'hi' || hello3 === 'hello') {
+		hasError = false;
+	}
+
+	if (!hasError) {
+		alert('и тебе привет');
+	} else {
+		alert('тогда пока');
+	}
+</script>
+</body>
+</html>
