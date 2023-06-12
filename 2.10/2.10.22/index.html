@@ -10,22 +10,22 @@
 Выводится всегда 4 конферма.
 Если хоть один конферм вернул фолс, то в конце выводится алерт: "Проиграл" иначе алерт: "Выиграл".
 <script>
-	let hasMistake = false;
+	let hasError = false;
 
 	if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
 	}
 	if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
 	}
 	if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
 	}
 	if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
 	}
 
-	if (hasMistake) {
+	if (hasError) {
 		alert('Проиграл');
 	} else {
 		alert('Выиграл');
