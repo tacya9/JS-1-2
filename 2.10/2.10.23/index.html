@@ -11,19 +11,23 @@
 Если хоть один конферм вернул фолс, то в конце выводится алерт: "Проиграл" иначе алерт: "Выиграл", а следующие конфермы
 не появляются.
 <script>
-	let hasMistake = false;
+	let hasError = false;
 
 	if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
+
 		alert('Проиграл');
 	} else if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
+
 		alert('Проиграл');
 	} else if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
+
 		alert('Проиграл');
 	} else if (!confirm()) {
-		hasMistake = true;
+		hasError = true;
+
 		alert('Проиграл');
 	} else {
 		alert('Выиграл');
