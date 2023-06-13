@@ -17,9 +17,10 @@
 После ввода всех данных: проверить все условия (ифы не вкладывать друг в друга)
 И если всё ок, тогда вывести алерт "Будильник готов", иначе "Неправильные данные"
 <script>
-	let hasError = false;
 	const hours = +prompt('Введите часы');
-	let minutes = +prompt('Введите минуты');
+	const minutes = +prompt('Введите минуты');
+
+	let hasError = false;
 
 	if (hours < 0 || hours > 23) {
 		hasError = true;
