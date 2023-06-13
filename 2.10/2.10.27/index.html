@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.27
+Выводится 4 сообщения. В них нужно ввести числа.
+После этого выводится алерт с сообщением: "Минимальное число - х, максимальное число - у."
+<script>
+	const firstNumber = +prompt('Введите число');
+	const secondNumber = +prompt('Введите число');
+	const thirdNumber = +prompt('Введите число');
+	const fourthNumber = +prompt('Введите число');
+	let minNumber = firstNumber;
+	let maxNumber = firstNumber;
+
+	if (minNumber > secondNumber) {
+		minNumber = secondNumber;
+	}
+
+	if (minNumber > thirdNumber) {
+		minNumber = thirdNumber;
+	}
+
+	if (minNumber > fourthNumber) {
+		minNumber = fourthNumber;
+	}
+
+	if (maxNumber < secondNumber) {
+		maxNumber = secondNumber;
+	}
+
+	if (maxNumber < thirdNumber) {
+		maxNumber = thirdNumber;
+	}
+
+	if (maxNumber < fourthNumber) {
+		maxNumber = fourthNumber;
+	}
+
+	alert(`Минимальное число - ${minNumber}, максимальное число - ${maxNumber}.`)
+</script>>
+</body>
+</html>
