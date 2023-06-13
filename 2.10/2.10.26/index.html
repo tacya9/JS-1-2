@@ -11,24 +11,25 @@
 тебе привет".
 Иначе будет алерт: "тогда пока".
 <script>
-	let hasError = true;
 	const hello1 = prompt();
 	const hello2 = prompt();
 	const hello3 = prompt();
 
+	let hasHello = false;
+
 	if (hello1 === 'привет' || hello1 === 'hi' || hello1 === 'hello') {
-		hasError = false;
+		hasHello = true;
 	}
 
 	if (hello2 === 'привет' || hello2 === 'hi' || hello2 === 'hello') {
-		hasError = false;
+		hasHello = true;
 	}
 
 	if (hello3 === 'привет' || hello3 === 'hi' || hello3 === 'hello') {
-		hasError = false;
+		hasHello = true;
 	}
 
-	if (!hasError) {
+	if (hasHello) {
 		alert('и тебе привет');
 	} else {
 		alert('тогда пока');
