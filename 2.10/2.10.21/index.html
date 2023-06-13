@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.10.21
+Сообщение: "Введите первую цифру двузначного числа"
+Потом сообщение: "Введите вторую цифру двузначного числа"
+А в конце выводится алерт: "Ваше число - XY. Если его поделить на 2, получится - Z"
+Если ввести отрицательное значение, тогда это значение надо сделать положительным.
+А если ввели текст - алерт "Ошибка!"
+<script>
+	let firstNumber = prompt('Введите первую цифру двузначного числа');
+	let secondNumber = prompt('Введите вторую цифру двузначного числа');
+	let result;
+
+	if ((firstNumber >= 0 || firstNumber < 0) && (secondNumber >= 0 || secondNumber < 0)) {
+		if (firstNumber < 0) {
+			firstNumber = String(firstNumber/-1);
+		}
+		if (secondNumber < 0) {
+			secondNumber = String(secondNumber/-1);
+		}
+
+		result = firstNumber + secondNumber;
+
+		alert(`Ваше число - ${result}. Если его поделить на 2, получится - ${result/2}`);
+	} else {
+		alert('Ошибка!');
+	}
+
+</script>
+</body>
+</html>
