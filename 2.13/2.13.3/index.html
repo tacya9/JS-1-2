@@ -13,10 +13,10 @@
 <script>
 	let number = 0;
 
-	while (number <= 101) {
-		number = +prompt('Введите число');
+	while (number < 100) {
+		number = prompt('Введите число');
 
-		number++;
+		if (!number) break;
 	}
 </script>
 </body>
