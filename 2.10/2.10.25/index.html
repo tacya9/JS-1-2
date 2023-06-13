@@ -23,7 +23,7 @@
 	if (hours >= 0 && hours <= 23) {
 		minutes = +prompt('Введите минуты');
 
-		if ((hours < 8 && hours >= 5) && (minutes >= 0 && minutes <= 59) || (hours === 8 && minutes === 0)) {
+		if ((hours >= 5 && hours < 8) && (minutes >= 0 && minutes <= 59) || (hours === 8 && minutes === 0)) {
 			alert('Будильник готов');
 		} else {
 			alert('Неправильные данные');
