@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.4
+Пользователь вводит число. Вывести все числа через запятую от нуля до этого числа, которые деляться на 5 без остатка.
+<script>
+	const number = +prompt('Введите число');
+
+	let result = '';
+
+	for (let i = 1; i <= number; i++) {
+		if ( i % 5 === 0) {
+			result += i + ',';
+		}
+	}
+
+	alert(result);
+</script>
+</body>
+</html>
