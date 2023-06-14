@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.5
+Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
+Другими словами, number > 1 – простое, если при его делении на любое число кроме 1 и number есть остаток.
+Например, 5 это простое число, оно не может быть разделено без остатка на 2, 3 и 4.
+Напишите код, который выводит все простые числа из интервала от 2 до number. А число number запрашивается у пользователя в самом
+начале.
+Для number = 10 результат должен быть 2,3,5,7.
+<script>
+	const number = +prompt('Введите число');
+
+	let result = '';
+	
+	for (let i = 2; i < number; i++) {
+		let isSimpleNumber = true;
+		
+		for (let j = 2; j < i; j++) {
+			if (i % j === 0) {
+				isSimpleNumber = false;
+				break;
+			}
+		}
+
+		if (isSimpleNumber) {
+			result += (result) ? `,${i}` : i;
+
+			// if (result) {
+			// 	result += ',' + i;
+			// } else {
+			// 	result += i;
+			// }
+		}
+	}
+
+	alert(result);
+</script>
+</body>
+</html>
