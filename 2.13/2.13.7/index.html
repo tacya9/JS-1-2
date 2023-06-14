@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.7
+Сообщение :"Введите число"
+alert ("Сумма четных чисел до числа X равна: Y")
+<script>
+	const number = +prompt('Введите число');
+
+	let result = 0;
+
+	for (let i = 0; i < number; i++) {
+		if (i % 2 === 0) {
+			result += i;
+		}
+	}
+
+	alert(`Сумма четных чисел до числа ${number} равна: ${result}`);
+</script>
+</body>
+</html>
