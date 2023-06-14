@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.6
+Сообщение: "Введите число, которое будет возводится в степень"
+Сообщение: "Введите степень, чтобы вычислить number^extent" (здесь number - число, которое возводить в степень, extent - это символ)
+Потом алерт: "Число number в степени extent будет равно Z" (здесь Х,extent - это числа, что ввёл пользователь)
+Не использовать существующий оператор ** для возведения в степень.
+Проверить на число, иначе вывести сообщение "Ошибка!"
+<script>
+	const number = +prompt('Введите число, которое будет возводится в степень');
+	const extent = +prompt('Введите степень, чтобы вычислить number^extent');
+
+	let result = 1;
+
+	if ((number > 0 || number <= 0) && (extent > 0 || extent <= 0) && (number != '' && extent != '' )) {
+		for (let i = 1; i <= extent; i++) {
+			result *= number;
+		}
+
+		alert(`Число ${number} в степени ${extent} будет равно ${result}`);
+	} else {
+		alert('Ошибка!');
+	}
+</script>
+</body>
+</html>
