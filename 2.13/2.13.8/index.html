@@ -12,8 +12,9 @@
 <script>
 	let result = 0;
 	let isNextStep = true;
+	let isError = false;
 
-	while (isNextStep) {
+	while (isNextStep && !isError) {
 		number = prompt('Введите число для вычисления полной суммы');
 
 		if (!number) {
@@ -24,7 +25,8 @@
 			result += +number;
 		} else {
 			alert('Ошибка');
-			break;
+
+			isError = true;
 		}
 	}
 
