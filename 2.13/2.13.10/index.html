@@ -15,15 +15,14 @@
 	if (confirm('Начать игру?')) {
 		let numBefore50 = 0;
 		let numAfter50 = 0;
-		let result = 0;
 
 		for (let i = 0; i < 100; i++) {
-			result = Math.floor(Math.random() * 100);
+			let result = Math.floor(Math.random() * 100);
 
 			if (result <= 50) {
-				numBefore50 += 1;
+				++numBefore50;
 			} else {
-				numAfter50 += 1;
+				++numAfter50;
 			}
 		}
 
