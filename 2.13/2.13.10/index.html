@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.10
+Появляется confirm: "Начать игру?"
+Если пользователь нажимает отмена, тогда alert: "Игра закончена".
+Иначе начинается игра. Она заключается в определении каих чисел было больше: числа меньше 50 или больше 50.
+Запускаем цикл 100 раз и проверяем какое случайное число появляется.
+А в конце выводим alert: "Выиграли числа до 50, их было Х" или "Выиграли числа после 50, их было Y".
+<script>
+	if (confirm('Начать игру?')) {
+		let numBefore50 = 0;
+		let numAfter50 = 0;
+
+		for (let i = 0; i < 100; i++) {
+			let result = Math.floor(Math.random() * 100);
+
+			if (result <= 50) {
+				++numBefore50;
+			} else {
+				++numAfter50;
+			}
+		}
+
+		if (numBefore50 > numAfter50) {
+			alert(`Выиграли числа до 50, их было ${numBefore50}`);
+		} else {
+			alert(`Выиграли числа после 50, их было ${numAfter50}`);
+		}
+
+	} else {
+		alert('Игра закончена');
+	}
+</script>
+</body>
+</html>
