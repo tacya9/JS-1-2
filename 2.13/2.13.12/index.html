@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.12
+Сообщение: "Введите стартовое число"
+Сообщение: "Введите конечное число"
+Если введены не числа (хоть одно), тогда алерт: "Попробуйте еще раз."
+Иначе алерт: "В этом диапазоне (Х - Y) сущестуют следующие числа, которые делятся на 11: А1, А2, А3, ..."
+<script>
+	const startNumber = prompt('Введите стартовое число');
+	const finishNumber = prompt('Введите конечное число');
+	const isStartNumber = startNumber > 0 || startNumber <= 0;
+	const isFinishNumber = finishNumber > 0 || finishNumber <= 0;
+
+	if (isStartNumber && isFinishNumber && startNumber && finishNumber) {
+		let result = '';
+		for (let i = +startNumber; i <= +finishNumber; i++) {
+			if (i % 11 === 0) {
+				result += `,${i}`;
+			}
+		}
+		alert(`В этом диапазоне (${startNumber} - ${finishNumber}) сущестуют следующие числа, которые делятся на 11: ${result}`);
+	} else {
+		alert('Попробуйте еще раз.');
+	}
+</script>
+</body>
+</html>
