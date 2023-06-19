@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.8
+Надо повторять следующее сообщение пока пользователь будет вводить число: "Введите число для вычисления полной суммы"
+Когда пользователь нажмет "Отмена" вывести alert('Сумма всех введенных чисел равна Х').
+Проверять на число и если вводится не число, тогда алерт "Ошибка" и конец выполнения программы.
+<script>
+	let result = 0;
+	let isNextStep = true;
+	let isError = false;
+
+	while (isNextStep && !isError) {
+		number = prompt('Введите число для вычисления полной суммы');
+
+		if (!number) {
+			isNextStep = false;
+		}
+
+		if (number > 0 || number <= 0) {
+			result += +number;
+		} else {
+			alert('Ошибка');
+
+			isError = true;
+		}
+	}
+
+	if (!isNextStep) {
+		alert(`Сумма всех введенных чисел равна ${result}`);
+	}
+</script>
+</body>
+</html>
