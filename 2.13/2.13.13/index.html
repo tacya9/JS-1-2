@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.13
+Первое сообщение с кнопками ОК и ОТМЕНА: "У вас есть 100р. Будем играть?"
+Если нет, тогда алерт: "Игра закончена. У вас - 100р.".
+Если да - начинается игра:
+Выводится сообщение с ОК и ОТМЕНА: "Что выпадет? Красное - ОК, Черное - ОТМЕНА"
+Дальше у компьютера чтото выпадает: красное или черное (с помощью случайного числа)
+Если игрок угадал, тогда к его сумме прибавляется 20р. (сделай эти 20р. через переменную)
+Если не угадал - тогда отнимается от суммы.
+И потом появляется самое первое сообщение с помощью которого можно продолжить игру или остановить.
+Если сумма становится 0, тогда alert: "Игра закончена. У вас - 0р."
+<script>
+	let hasStartedGame = true;
+	let money = 100;
+
+	while (hasStartedGame) {
+		hasStartedGame = confirm(`У вас есть ${money}р. Будем играть?`);
+
+		if (hasStartedGame) {
+			const isUserColorRed = confirm('Что выпадет? Красное - ОК, Черное - ОТМЕНА');
+			const randomNumber = Math.random();
+			const isCompColorRed = (randomNumber >= 0.5);
+			const delta = 20;
+
+			if (isCompColorRed === isUserColorRed) {
+				money += delta;
+			} else {
+				money -= delta;
+			}
+
+			if (money === 0) {
+				alert('Игра закончена. У вас - 0р.');
+
+				hasStartedGame = false;
+			}
+		} else {
+			alert(`Игра закончена. У вас - ${money}р.`);
+
+			hasStartedGame = false;
+		}
+	}
+
+</script>
+</body>
+</html>
