@@ -16,37 +16,33 @@
 И потом появляется самое первое сообщение с помощью которого можно продолжить игру или остановить.
 Если сумма становится 0, тогда alert: "Игра закончена. У вас - 0р."
 <script>
-	let isError = false;
-	let sum = 100;
+	let hasStartedGame = true;
+	let money = 100;
 
-	while (!isError) {
-		isError = confirm(`У вас есть ${sum}р. Будем играть?`);
+	while (hasStartedGame) {
+		hasStartedGame = confirm(`У вас есть ${money}р. Будем играть?`);
 
-		if (isError) {
-			let isRedColor = confirm('Что выпадет? Красное - ОК, Черное - ОТМЕНА');
-			let result = Math.floor(Math.random() * 100);
-			let isBlackColor;
-			let points = 20;
+		if (hasStartedGame) {
+			const isUserColorRed = confirm('Что выпадет? Красное - ОК, Черное - ОТМЕНА');
+			const randomNumber = Math.floor(Math.random());
+			const isCompColorRed = (randomNumber >= 0.5);
+			const delta = 20;
 
-			isError = false;
-
-			isBlackColor = (result >= 50);
-
-			if (isBlackColor === isRedColor) {
-				sum -= points;
+			if (isCompColorRed === isUserColorRed) {
+				money += delta;
 			} else {
-				sum += points;
+				money -= delta;
 			}
 
-			if (sum === 0) {
+			if (money === 0) {
 				alert('Игра закончена. У вас - 0р.');
 
-				isError = true;
+				hasStartedGame = false;
 			}
 		} else {
-			alert(`Игра закончена. У вас - ${sum}р.`);
+			alert(`Игра закончена. У вас - ${money}р.`);
 
-			isError = true;
+			hasStartedGame = false;
 		}
 	}
 
