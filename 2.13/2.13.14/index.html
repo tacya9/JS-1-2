@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.14
+Необходимо провести анализ случайных чисел от 0 до 100 включительно.
+Запускаем случайное число 50 раз и потом выводим алерт:
+"Числа в диапазоне от 0-20 выпало Х1 раз, 20-40 выпало Х2 раз, 40-60 выпало Х3 раз, 60-80 выпало Х4 раз, 80-100 выпало
+Х5"
+А потом алерт: "Победил диапазон 60-80! Больше всего выпало чисел из этого диапазона."
+<script>
+	let range1 = 0;
+	let range2 = 0;
+	let range3 = 0;
+	let range4 = 0;
+	let range5 = 0;
+	let winRange;
+	let result = 0;
+
+	for (let i = 0; i < 50; i++) {
+		let num = Math.floor(Math.random() * 100);
+
+		if (num >= 0 && num < 20) {
+			++range1;
+		}
+
+		if (num >= 20 && num < 40) {
+			++range2;
+		}
+
+		if (num >= 40 && num < 60) {
+			++range3;
+		}
+
+		if (num >= 60 && num < 80) {
+			++range4;
+		}
+
+		if (num >= 80 && num < 100) {
+			++range5;
+		}
+	}
+
+	if (result < range1) {
+		result = range1;
+		winRange = '0-20';
+	}
+
+	if (result < range2) {
+		result = range2;
+		winRange = '20-40';
+	}
+
+	if (result < range3) {
+		result = range3;
+		winRange = '40-60';
+	}
+
+	if (result < range4) {
+		result = range4;
+		winRange = '60-80';
+	}
+
+	if (result < range5) {
+		result = range5;
+		winRange = '80-100';
+	}
+
+	console.log(winRange);
+	alert(`Числа в диапазоне от 0-20 выпало ${range1} раз, 20-40 выпало ${range2} раз, 40-60 выпало ${range3} раз, 60-80 выпало ${range4} раз, 80-100 выпало ${range5}`);
+	alert(`Победил диапазон ${winRange}! Больше всего выпало чисел из этого диапазона.`);
+</script>
+</body>
+</html>
