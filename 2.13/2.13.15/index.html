@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.13.15
+Сообщение: "Попадет ли ваше число в случайный диапазон. Введите число от 0 до 1000:"
+Дальше скрипт должен сгенерировать случайный диапазон.
+Если введенное число попало в этот диапазон, тогда алерт:
+"Поздравляю! Ваше число Х попало в диапазон от Y1 до Y2"
+Если не попало, тогда алерт:
+"Ваше число Х не попало в диапазон от Y1 до Y2"
+<script>
+	const userNumber = +prompt('Попадет ли ваше число в случайный диапазон. Введите число от 0 до 1000:');
+	const randomNum1 = Math.floor(Math.random() * 1000);
+	const randomNum2 = Math.floor(Math.random() * 1000);
+
+	let firstNumberOfRange;
+	let secondNumberOfRange;
+	let isNumberInRange = false;
+
+	if (randomNum1 < randomNum2) {
+		firstNumberOfRange = randomNum1;
+		secondNumberOfRange = randomNum2;
+	} else {
+		firstNumberOfRange = randomNum2;
+		secondNumberOfRange = randomNum1;
+	}
+
+	for (let i = firstNumberOfRange; i < secondNumberOfRange; i++) {
+		if (userNumber === i) {
+			isNumberInRange = true;
+		}
+	}
+
+	if (isNumberInRange) {
+		alert(`Поздравляю! Ваше число ${userNumber} попало в диапазон от ${firstNumberOfRange} до ${secondNumberOfRange}`);
+	} else {
+		alert(`Ваше число ${userNumber} не попало в диапазон от ${firstNumberOfRange} до ${secondNumberOfRange}`);
+	}
+</script>
+</body>
+</html>
