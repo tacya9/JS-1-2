@@ -19,7 +19,7 @@
 
 	let firstNumberOfRange;
 	let secondNumberOfRange;
-	let isNumberInRange = false;
+	let isNumberInRange;
 
 	if (randomNum1 < randomNum2) {
 		firstNumberOfRange = randomNum1;
@@ -29,11 +29,7 @@
 		secondNumberOfRange = randomNum1;
 	}
 
-	for (let i = firstNumberOfRange; i < secondNumberOfRange; i++) {
-		if (userNumber === i) {
-			isNumberInRange = true;
-		}
-	}
+	isNumberInRange = (userNumber >= firstNumberOfRange && userNumber <= secondNumberOfRange);
 
 	if (isNumberInRange) {
 		alert(`Поздравляю! Ваше число ${userNumber} попало в диапазон от ${firstNumberOfRange} до ${secondNumberOfRange}`);
