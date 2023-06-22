@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.4
+Сообщение: "Введите число".
+Если число является простым, то алерт: "Число х - простое".
+Иначе алерт: "Число х - сложное".
+Зделать с использованием функции, у которой один параметр - число, которое проверяется.
+Функция будет возвращать тру, если число простое, иначе фолс.
+<script>
+	const userNumber = +prompt('Введите число');
+
+	function checkSimpleNumber(number) {
+		let isSimpleNumber = true;
+
+		for (let i = 2; i < number; i++) {
+			if (number % i === 0) {
+				isSimpleNumber = false;
+			}
+		}
+		return isSimpleNumber;
+	}
+
+	if (checkSimpleNumber(userNumber)) {
+		alert(`Число ${userNumber} - простое`);
+	} else {
+		alert(`Число ${userNumber} - сложное`);
+	}
+</script>
+</body>
+</html>
