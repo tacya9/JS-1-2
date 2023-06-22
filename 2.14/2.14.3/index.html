@@ -9,40 +9,44 @@
 Введите число от 0 до 9 текстом
 Вывести алерт с сообщение: "Вы ввели цифру Х"
 <script>
-	const userNum = prompt('Введите число от 0 до 9 текстом');
+	const userStringNum = prompt('Введите число от 0 до 9 текстом');
+	
+	let userNumberNum;
 
-	switch (userNum) {
+	switch (userStringNum) {
 		case 'ноль':
-			alert('Вы ввели цифру ноль');
+			userNumberNum = 0;
 			break;
 		case 'один':
-			alert('Вы ввели цифру один');
+			userNumberNum = 1;
 			break;
 		case 'два':
-			alert('Вы ввели цифру два');
+			userNumberNum = 2;
 			break;
 		case 'три':
-			alert('Вы ввели цифру три');
+			userNumberNum = 3;
 			break;
 		case 'четыре':
-			alert('Вы ввели цифру четыре');
+			userNumberNum = 4;
 			break;
 		case 'пять':
-			alert('Вы ввели цифру пять');
+			userNumberNum = 5;
 			break;
 		case 'шесть':
-			alert('Вы ввели цифру шесть');
+			userNumberNum = 6;
 			break;
 		case 'семь':
-			alert('Вы ввели цифру семь');
+			userNumberNum = 7;
 			break;
 		case 'восемь':
-			alert('Вы ввели цифру восемь');
+			userNumberNum = 8;
 			break;
 		case 'девять':
-			alert('Вы ввели цифру девять');
+			userNumberNum = 9;
 			break;
 	}
+
+	alert(`Вы ввели цифру ${userNumberNum}`);
 </script>
 </body>
 </html>
