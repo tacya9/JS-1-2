@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.2
+Напишите функцию pow(x,n), которая возводит x в степень n и возвращает результат.
+Результат выводить в консоле.
+Создайте страницу, которая запрашивает x и n, а затем выводит результат pow(x,n) через alert.
+Пример вызовов в консоле:
+
+console.log(pow(3, 2)); ---> 9
+console.log(pow(3, 3)); ---> 27
+console.log(pow(1, 100)); ---> 1
+<script>
+	const number = prompt('Введите число');
+	const extent = prompt('Введите число');
+
+	function pow(x, n) {
+		let result = 1;
+
+		for (let i = 0; i < n; i++) {
+			result *= x;
+		}
+
+		return result;
+	}
+
+	alert(pow(number, extent));
+</script>
+</body>
+</html>
