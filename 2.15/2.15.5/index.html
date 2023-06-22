@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.5
+Сделай функцию, которая будет возвращать случайное число без дробной части от 0 до 100. А потом используя эту функцию,
+выведи алерт "Сумма двух случайных чисел равна Х".
+<script>
+	function getRandomNumber() {
+		const randomNumber = Math.floor(Math.random() * 100);
+
+		return randomNumber;
+	}
+
+	alert(`Сумма двух случайных чисел равна ${getRandomNumber() + getRandomNumber()}`);
+</script>
+</body>
+</html>
