@@ -15,10 +15,8 @@ console.log(min(3, -1)); ---> -1
 console.log(min(1, 1)); ---> 1
 <script>
 	function min(a, b) {
-		let minNumber;
+		let minNumber = (a < b) ? a : b;
 
-		minNumber = (a < b) ? a : b;
-		
 		return minNumber;
 	}
 
