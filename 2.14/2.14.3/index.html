@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.14.3
+Введите число от 0 до 9 текстом
+Вывести алерт с сообщение: "Вы ввели цифру Х"
+<script>
+	const userStringNum = prompt('Введите число от 0 до 9 текстом');
+	
+	let userNumberNum;
+
+	switch (userStringNum) {
+		case 'ноль':
+			userNumberNum = 0;
+			break;
+		case 'один':
+			userNumberNum = 1;
+			break;
+		case 'два':
+			userNumberNum = 2;
+			break;
+		case 'три':
+			userNumberNum = 3;
+			break;
+		case 'четыре':
+			userNumberNum = 4;
+			break;
+		case 'пять':
+			userNumberNum = 5;
+			break;
+		case 'шесть':
+			userNumberNum = 6;
+			break;
+		case 'семь':
+			userNumberNum = 7;
+			break;
+		case 'восемь':
+			userNumberNum = 8;
+			break;
+		case 'девять':
+			userNumberNum = 9;
+			break;
+	}
+
+	alert(`Вы ввели цифру ${userNumberNum}`);
+</script>
+</body>
+</html>
