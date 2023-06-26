@@ -14,18 +14,19 @@
 <script>
 	const userNumber = +prompt('Введите число');
 
-	function checkSimpleNumber(number) {
-		let isSimpleNumber = true;
+	function checkNumberIsSimple(number) {
+		let isNumberSimple = true;
 
 		for (let i = 2; i < number; i++) {
 			if (number % i === 0) {
-				isSimpleNumber = false;
+				isNumberSimple = false;
+				break;
 			}
 		}
-		return isSimpleNumber;
+		return isNumberSimple;
 	}
 
-	if (checkSimpleNumber(userNumber)) {
+	if (checkNumberIsSimple(userNumber)) {
 		alert(`Число ${userNumber} - простое`);
 	} else {
 		alert(`Число ${userNumber} - сложное`);
