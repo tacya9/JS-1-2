@@ -17,7 +17,7 @@
 
 	let sum = userFirstNum + userSecondNum;
 
-	if (sum >= 0 && sum < 10) {
+	if (sum >= 0 && sum < 20) {
 		switch (sum) {
 			case 0:
 				sum = 'ноль';
@@ -49,10 +49,6 @@
 			case 9:
 				sum = 'девять';
 				break;
-		}
-	}
-	if (sum > 9 && sum < 20) {
-		switch (sum) {
 			case 10:
 				sum = 'десять';
 				break;
@@ -89,10 +85,6 @@
 		let firstNum = Math.floor(sum / 10);
 		let secondNum = sum % 10;
 
-		if (secondNum === 0) {
-			secondNum = '';
-		}
-
 		switch (firstNum) {
 			case 2:
 				firstNum = 'двадцать';
@@ -118,6 +110,9 @@
 		}
 
 		switch (secondNum) {
+			case 0:
+				secondNum = '';
+				break;
 			case 1:
 				secondNum = 'один';
 				break;
