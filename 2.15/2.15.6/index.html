@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.6
+Сделай функцию, которая будет возвращать сумму двух чисел.
+В самом начале браузер спросит 4 числа:
+"Введите первое число"
+"Введите второе число"
+"Введите третье число"
+"Введите четвертое число"
+А потом используя эту функцию выведи 2 алерта:
+"Сумма чисел А1 и В1 равна Х1"
+"Сумма чисел А2 и В2 равна Х2"
+<script>
+	function getSum(number1, number2) {
+		return alert(`Сумма чисел ${number1} и ${number2} равна ${number1 + number2}`);
+	}
+
+	const firstNumber = +prompt('Введите первое число');
+	const secondNumber = +prompt('Введите второе число');
+	const thirdNumber = +prompt('Введите третье число');
+	const fourthNumber = +prompt('Введите четвертое число');
+
+	getSum(firstNumber, secondNumber);
+	getSum(thirdNumber, fourthNumber);
+</script>
+</body>
+</html>
