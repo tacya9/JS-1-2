@@ -14,14 +14,12 @@
 "Этого человека зовут - Х. Он [еще молод], потому что ему Y лет."
 Причем фраза [еще молод] может поменяться на [уже взрослый], если введенный для него возраст был больше 18.
 <script>
-	function userInformation(name, age) {
+	function showUserInformation(name, age) {
 		let ageText = 'еще молод';
 
-		if (age > 18) {
-			ageText = 'уже взрослый';
-		}
+		ageText = (age > 18) ? 'уже взрослый' : ageText;
 
-		return alert(`Этого человека зовут - ${name}. Он ${ageText}, потому что ему ${age} лет.`);
+		alert(`Этого человека зовут - ${name}. Он ${ageText}, потому что ему ${age} лет.`);
 	}
 
 	const name1 = prompt('Введите имя');
@@ -29,8 +27,8 @@
 	const name2 = prompt('Введите имя');
 	const age2 = prompt('Введите возраст');
 
-	userInformation(name1, age1);
-	userInformation(name2, age2);
+	showUserInformation(name1, age1);
+	showUserInformation(name2, age2);
 </script>
 </body>
 </html>
