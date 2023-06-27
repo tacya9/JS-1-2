@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.14.4
+Сообщение первое: "Введите первое число от 0 до 40" (например ввели 12)
+Сообщение второе: "Введите второе число от 0 до 40" (например ввели 21)
+Потом появляется алерт: "Сумма этих чисел равна тридцать три" (для нашего примера получился ответ 33)
+Специфика в том, чтобы в алерте выводить числа текстом.
+Предусмотреть текст для чисел в диапазоне 0 - 99.
+<script>
+	const userFirstNum = +prompt('Введите первое число от 0 до 40');
+	const userSecondNum = +prompt('Введите второе число от 0 до 40');
+
+	let sum = userFirstNum + userSecondNum;
+
+	if (sum >= 0 && sum < 20) {
+		switch (sum) {
+			case 0:
+				sum = 'ноль';
+				break;
+			case 1:
+				sum = 'один';
+				break;
+			case 2:
+				sum = 'два';
+				break;
+			case 3:
+				sum = 'три';
+				break;
+			case 4:
+				sum = 'четыре';
+				break;
+			case 5:
+				sum = 'пять';
+				break;
+			case 6:
+				sum = 'шесть';
+				break;
+			case 7:
+				sum = 'семь';
+				break;
+			case 8:
+				sum = 'восемь';
+				break;
+			case 9:
+				sum = 'девять';
+				break;
+			case 10:
+				sum = 'десять';
+				break;
+			case 11:
+				sum = 'одинадцать';
+				break;
+			case 12:
+				sum = 'двенадцать';
+				break;
+			case 13:
+				sum = 'тринадцать';
+				break;
+			case 14:
+				sum = 'четырнадцать';
+				break;
+			case 15:
+				sum = 'пятнадцать';
+				break;
+			case 16:
+				sum = 'шестнадцать';
+				break;
+			case 17:
+				sum = 'семнадцать';
+				break;
+			case 18:
+				sum = 'восемнадцать';
+				break;
+			case 19:
+				sum = 'девятнадцать';
+				break;
+		}
+	}
+	if (sum > 19) {
+		let firstNum = Math.floor(sum / 10);
+		let secondNum = sum % 10;
+
+		switch (firstNum) {
+			case 2:
+				firstNum = 'двадцать';
+				break;
+			case 3:
+				firstNum = 'тридцать';
+				break;
+			case 4:
+				firstNum = 'сорок';
+				break;
+			case 5:
+				firstNum = 'пятьдесят';
+				break;
+			case 6:
+				firstNum = 'шестьдесят';
+				break;
+			case 7:
+				firstNum = 'семьдесят';
+				break;
+			case 8:
+				firstNum = 'восемьдесят';
+				break;
+		}
+
+		switch (secondNum) {
+			case 0:
+				secondNum = '';
+				break;
+			case 1:
+				secondNum = 'один';
+				break;
+			case 2:
+				secondNum = 'два';
+				break;
+			case 3:
+				secondNum = 'три';
+				break;
+			case 4:
+				secondNum = 'четыре';
+				break;
+			case 5:
+				secondNum = 'пять';
+				break;
+			case 6:
+				secondNum = 'шесть';
+				break;
+			case 7:
+				secondNum = 'семь';
+				break;
+			case 8:
+				secondNum = 'восемь';
+				break;
+			case 9:
+				secondNum = 'девять';
+				break;
+		}
+
+		sum = firstNum + ' ' + secondNum;
+	}
+
+	alert(`Сумма этих чисел равна ${sum}`);
+</script>
+</body>
+</html>
