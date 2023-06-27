@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.9
+Выводится промпт: "Выберите язык: 1 - рус, 2 - английский, 3 - немецкий"
+Все дальнейшие сообщения должны быть на выбранном языке.
+Первое сообщение: "Какая температура на улице?" (пользователь вводит только число)
+Второе сообщение: "Сколько часов?" (пользователь вводит только число)
+Дальше выводится серия сообщений:
+"На улице сейчас [...]" [холодно]<0, [средне]>=0 && <20, [тепло]>=20
+"На улице сейчас [...]" [ночь]>=0 && <5, [утро]>=5 && <10, [день]>=10 && <17, [вечер]>=17 && <24
+<script>
+	const language = +prompt('Выберите язык: 1 - рус, 2 - английский, 3 - немецкий');
+
+	let temp;
+	let time;
+
+	switch (language) {
+		case 1:
+			temp = prompt('Какая температура на улице?');
+			time = prompt('Сколько часов?');
+
+			if (temp < 0) {
+				temp = 'холодно';
+			} else if (temp >= 1 && temp < 20) {
+				temp = 'средне';
+			} else {
+				temp = 'тепло';
+			}
+			if (time >= 0 && time < 5) {
+				time = 'ночь';
+			} else if (time >= 5 && time < 10) {
+				time = 'утро';
+			} else if (time >= 10 && time < 17) {
+				time = 'день';
+			} else {
+				time = 'вечер';
+			}
+
+			alert(`На улице сейчас ${temp}`);
+			alert(`На улице сейчас ${time}`);
+			break;
+		case 2:
+			temp = prompt('What is the temperature outside?');
+			time = prompt('How many hours?');
+
+			if (temp < 0) {
+				temp = 'cold';
+			} else if (temp >= 1 && temp < 20) {
+				temp = 'medium';
+			} else {
+				temp = 'warm';
+			}
+			if (time >= 0 && time < 5) {
+				time = 'night';
+			} else if (time >= 5 && time < 10) {
+				time = 'morning';
+			} else if (time >= 10 && time < 17) {
+				time = 'day';
+			} else {
+				time = 'evening';
+			}
+
+			alert(`On the street now ${temp}`);
+			alert(`On the street now ${time}`);
+			break;
+		case 3:
+			temp = prompt('Wie hoch ist die Temperatur draußen?');
+			time = prompt('Wie viele Stunden?');
+
+			if (temp < 0) {
+				temp = 'kalt';
+			} else if (temp >= 1 && temp < 20) {
+				temp = 'mittel';
+			} else {
+				temp = 'warm';
+			}
+			if (time >= 0 && time < 5) {
+				time = 'nacht';
+			} else if (time >= 5 && time < 10) {
+				time = 'morgen';
+			} else if (time >= 10 && time < 17) {
+				time = 'tag';
+			} else {
+				time = 'abend';
+			}
+
+			alert(`Jetzt auf der Straße ${temp}`);
+			alert(`Jetzt auf der Straße ${time}`);
+			break;
+	}
+</script>
+</body>
+</html>
