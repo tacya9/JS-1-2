@@ -6,8 +6,20 @@
 </head>
 <body>
 ### 2.15.8
-Скопируй весь код из задачи 2.10.8 и переделай его так,
-чтобы повторяющегося кода было как можно меньше с использованием функции.
+Скопируй весь код из задачи 2.10.8 и переделай его - теперь должна быть
+отдельная функция getPoints, с помощью которой мы будем вычислять результат.
+В итоге код должен получиться следующим:
+
+function getPoints() { ... } // часть функционала находится здесь
+
+let result = Number(prompt('Введите стартовые очки'));
+
+for (let i = 0; i < 3; i++) {
+result += getPoints();
+}
+
+alert(У вас ${result} очков);
+
 ### 2.10.8
 Появляется вопрос: "Введите стартовые очки"
 Пользователь вводит какое то число. Потом появляется новый вопрос:
@@ -17,23 +29,26 @@
 И так 3 круга, а потом выводится сообщение:
 "У вас Х очков"
 <script>
-	function resultPoints() {
-		let result = Number(prompt('Введите стартовые очки'));
+	function getPoints() {
+		let points = 0;
+		let shouldIncreasePoints = confirm('Добавить или отнять?');
 
-		for (let i = 0; i < 3; i++) {
-			let shouldIncreasePoints = confirm('Добавить или отнять?');
-
-			if (shouldIncreasePoints) {
-				result += 10;
-			} else {
-				result -= 10;
-			}
+		if (shouldIncreasePoints) {
+			points += 10;
+		} else {
+			points -= 10;
 		}
 
-		return alert(`У вас ${result} очков`);
+		return points;
+	}
+	
+	let result = +prompt('Введите стартовые очки');
+
+	for (let i = 0; i < 3; i++) {
+		result += getPoints();
 	}
 
-	resultPoints();
+	alert(`У вас ${result} очков`);
 </script>
 </body>
 </html>
