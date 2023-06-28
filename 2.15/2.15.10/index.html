@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.10
+Создать 7 функций:
+
+Первая функция будет складывать два числа и сумму умножать на третье число.
+Результат будет выводить через алерт.
+
+Вторая функция будет возвращать сумму последовательности до конкретного числа
+(если передано 4, то функция вернет 1+2+3+4=10).
+
+Третья функция должна выводить в консоль приветствие по имени в таком формате: "Привет, [Имя]!" - если возраст < 18,
+"Здравствуйте, [Имя]!" - если возраст >= 18
+
+Четвертая функция должна выполнять функции калькулятора. Она принемает два числа и оператор (действие: отнять,
+прибавить, умножить, разделить) и возвращает результат.
+
+Пятая функция должна возвращать случайное число (без дробной части) в диапазоне от одного числа до другого числа.
+
+Шестая функция проверяет переданное значение на булевый тип. Если было передано только false или true, эта функция
+вернет true.
+
+Седьмая функция принимает 3 булевых параметра. И вовращает их сумму т.е. вернет или false или true.
+Проверить все значения на булевый тип. Если хоть одно не булевый, тогда функция вернет текст: "Ошибка".
+(в булевой алгебре прибавить - это дизъюнкция, означает применить логическое или)
+(в булевой алгебре умножить - это конъюнкция, означает применить логическое и)
+<script>
+	function showResult(num1, num2, num3) {
+		alert(`${(num1 + num2) * num3}`);
+	}
+
+	function getSequenceSum(num) {
+		let result = 0;
+
+		for (let i = 0; i <= num; i++) {
+			result += i;
+		}
+
+		return result;
+	}
+
+	function showUserInformation(name, age) {
+		const greetings = (age < 18) ? `Привет, ${name}!` : `Здравствуйте, ${name}!`;
+
+		return greetings;
+	}
+
+	console.log(showUserInformation('Tanya', 37));
+
+	function getMathematicalResult(num1, num2, operator) {
+		let result;
+
+		switch (operator) {
+			case '+':
+				result = num1 + num2;
+				break;
+			case '-':
+				result = num1 - num2;
+				break;
+			case '*':
+				result = num1 * num2;
+				break;
+			case '/':
+				result = num1 / num2;
+				break;
+		}
+
+		return result;
+	}
+
+	function getRandomNumber(num1, num2) {
+		let randomNumber;
+
+		if (num1 > num2) {
+			randomNumber = Math.floor(Math.random() * (num1 - num2 + 1)) + num2;
+		} else {
+			randomNumber = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+		}
+
+		return randomNumber;
+	}
+
+	function checkType(variable) {
+		return (variable === true || variable === false);
+	}
+
+	function getBooleanSum(var1, var2, var3) {
+		let isBooleanType = false;
+
+		if (!isBooleanType) {
+			if (var1 === true || var1 === false) {
+				isBooleanType = true;
+			}
+		}
+
+		if (isBooleanType) {
+			isBooleanType = (var2 === true || var2 === false);
+		}
+
+		if (isBooleanType) {
+			isBooleanType = (var3 === true || var3 === false);
+		}
+
+		return (isBooleanType) ? (var1 || var2 || var3) : 'Ошибка';
+	}
+</script>
+</body>
+</html>
