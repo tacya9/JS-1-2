@@ -30,14 +30,9 @@ alert(У вас ${result} очков);
 "У вас Х очков"
 <script>
 	function getPoints() {
-		let points = 0;
-		let shouldIncreasePoints = confirm('Добавить или отнять?');
+		const shouldIncreasePoints = confirm('Добавить или отнять?');
 
-		if (shouldIncreasePoints) {
-			points += 10;
-		} else {
-			points -= 10;
-		}
+		const points = (shouldIncreasePoints) ? +10 : -10;
 
 		return points;
 	}
