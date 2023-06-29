@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.11
+Создать 6 функций:
+
+Создать первую функцию, которая будет проверять переданное значение на число.
+Если это число, тогда функция вернет true, иначе false
+
+Создать вторую функцию, которая будет проверять число и возвращать данные о нем:
+"Число Х - [четное], [положительное], [сложное]"
+Но если в функцию передали не число, тогда в консоль надо вывести сообщение:
+"Х - не является числом"
+Чтобы сделать эту проверку воспользуйся первой функцией...
+
+Создать третью функцию, которая будет возвращать минимальное число из четырёх чисел.
+А если хотябы одно число не является числом - вернуть текст "Ошибка"
+
+Создать четвертую функцию, у которой будет 2 параметра value1 и value2.
+В какой-то из них мы будем передавать имя (текст), а в какой-то - возраст (число).
+Функция должна понять где текст, а где число и вывести алерт с таким вот сообщением:
+"Привет, [имя]. Твой возраст - [X]"
+
+Сделать пятую функцию, которая будет спрашивать у пользователя число:
+"Введите число, чтобы получить о нём подробности"
+А потом выведет алерт с подобным сообщением:
+"Число Х - [четное], [положительное], [сложное]"
+а если пользователь ввел не число, то будет алерт такой:
+"Х - не является числом"
+
+Создать шестую функцию, которая принимает любые 3 числа.
+И возвращает строку этих чисел разделенных дефисом в порядке возрастания.
+Если хоть одно не число, то она вернет false.
+Пример вывода чисел: "3-14-78"
+<script>
+	function isNumber(num) {
+		return ((num >= 0 || num < 0) && num !== '' && num !== null);
+	}
+
+	function showNumberInformation(number) {
+		let numberInfo = `Число ${number} - `;
+
+		if (isNumber(number)) {
+			let isNumberSimple = true;
+
+			numberInfo += (number % 2 === 0) ? 'четное, ' : 'нечетное, ';
+			numberInfo += (number > 0) ? 'положительное, ' : 'отридцательное, ';
+
+			for (let i = 2; i < number; i++) {
+				if (number % i === 0) {
+					isNumberSimple = false;
+					break;
+				}
+			}
+
+			numberInfo += (isNumberSimple) ? 'простое' : 'сложное';
+		} else {
+			numberInfo = `${number}- не является числом`;
+		}
+
+		return numberInfo;
+	}
+
+	function getMinNumber(num1, num2, num3, num4) {
+		let result = num1;
+
+		if (isNumber(num1) && isNumber(num2) && isNumber(num3) && isNumber(num4)) {
+			result = (result < num2) ? result : num2;
+			result = (result < num3) ? result : num3;
+			result = (result < num4) ? result : num4;
+		} else {
+			result = 'Ошибка';
+		}
+
+		return result;
+	}
+
+	function showUserInfo(value1, value2) {
+		if (isNumber(value1)) {
+			alert(`Привет, ${value2}. Твой возраст - ${value1}`);
+		} else {
+			alert(`Привет, ${value1}. Твой возраст - ${value2}`);
+		}
+	}
+	
+	function showInfo () {
+		number = prompt('Введите число, чтобы получить о нём подробности');
+
+		alert(showNumberInformation(number));
+	}
+
+	function getStringNumbers(num1, num2, num3) {
+		let stringNumbers = '';
+
+		if (isNumber(num1) && isNumber(num2) && isNumber(num3)) {
+			let tempNum ;
+
+			if (num1 > num2) {
+				tempNum = num1;
+				num1 = num2;
+				num2 = tempNum;
+			}
+			if (num2 > num3) {
+				tempNum = num2;
+				num2 = num3;
+				num3 = tempNum;
+			}
+			if (num1 > num2) {
+				tempNum = num1;
+				num1 = num2;
+				num2 = tempNum;
+			}
+			if (num2 > num3) {
+				tempNum = num2;
+				num2 = num3;
+				num3 = tempNum;
+			}
+
+			stringNumbers =`${num1}-${num2}-${num3}`
+		} else {
+			stringNumbers = false;
+		}
+
+		return stringNumbers;
+	}
+</script>
+</body>
+</html>
