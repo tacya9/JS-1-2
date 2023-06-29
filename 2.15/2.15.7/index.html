@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.7
+В самом начале выводится 2 пары сообщений:
+1) "Введите имя" и "Введите возраст"
+2) "Введите имя" и "Введите возраст"
+
+А потом вывести 2 алерта с инфой из введенных данных:
+"Этого человека зовут - Х. Он [еще молод], потому что ему Y лет."
+Причем фраза [еще молод] может поменяться на [уже взрослый], если введенный для него возраст был больше 18.
+<script>
+	function showUserInformation(name, age) {
+		const ageText = (age > 18) ? 'уже взрослый' :'еще молод';
+
+		alert(`Этого человека зовут - ${name}. Он ${ageText}, потому что ему ${age} лет.`);
+	}
+
+	const name1 = prompt('Введите имя');
+	const age1 = prompt('Введите возраст');
+	const name2 = prompt('Введите имя');
+	const age2 = prompt('Введите возраст');
+
+	showUserInformation(name1, age1);
+	showUserInformation(name2, age2);
+</script>
+</body>
+</html>
