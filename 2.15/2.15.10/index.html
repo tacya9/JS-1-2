@@ -31,7 +31,7 @@
 (в булевой алгебре умножить - это конъюнкция, означает применить логическое и)
 <script>
 	function showResult(num1, num2, num3) {
-		alert(`${(num1 + num2) * num3}`);
+		alert((num1 + num2) * num3);
 	}
 
 	function getSequenceSum(num) {
@@ -47,10 +47,8 @@
 	function showUserInformation(name, age) {
 		const greetings = (age < 18) ? `Привет, ${name}!` : `Здравствуйте, ${name}!`;
 
-		return greetings;
+		console.log(greetings);
 	}
-
-	console.log(showUserInformation('Tanya', 37));
 
 	function getMathematicalResult(num1, num2, operator) {
 		let result;
@@ -90,24 +88,24 @@
 	}
 
 	function getBooleanSum(var1, var2, var3) {
-		let isBooleanType = false;
+		let areAllVariablesBoolean = false;
 
-		if (!isBooleanType) {
-			if (var1 === true || var1 === false) {
-				isBooleanType = true;
-			}
+		if (checkType(var1)) {
+			areAllVariablesBoolean = true;
 		}
 
-		if (isBooleanType) {
-			isBooleanType = (var2 === true || var2 === false);
+		if (areAllVariablesBoolean) {
+			areAllVariablesBoolean = (checkType(var2));
 		}
 
-		if (isBooleanType) {
-			isBooleanType = (var3 === true || var3 === false);
+		if (areAllVariablesBoolean) {
+			areAllVariablesBoolean = (checkType(var3));
 		}
 
-		return (isBooleanType) ? (var1 || var2 || var3) : 'Ошибка';
+		return (areAllVariablesBoolean) ? (var1 || var2 || var3) : 'Ошибка';
 	}
+
+	console.log(getBooleanSum(true, 3, false))
 </script>
 </body>
 </html>
