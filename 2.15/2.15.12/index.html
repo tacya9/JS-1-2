@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 2.15.12
+Создать 9 функций:
+1) Функция, которая проверяет на число. Если передано функции число, тогда она возвращает true, иначе false.
+2) Функция, которая проверяет на четность. Если четное число, тогда вернет true.
+3) Функция, которая проверяет число знак. Если число положительное, тогда вернет true.
+4) Функция, которая проверяет сложное ли или простое число. Если простое - возвращает true.
+5) Функция, которая проверят дробное ли число. Если дробное - возвращает true.
+6) Функция, которая возвращает  сумму последовательности до конкретного числа
+(если передано 4, то функция вернет 1+2+3+4=10).
+7) Функция, которая возвращает геометрическую прогрессию переданного числа.
+8) Функция, которая собирает информацию о переданном числе и возвращает строку этих данных, например:
+"Число Х - четное, положительное, сложное, целое. Арифметическая прогрессия = Y. Геометрическая прогрессия = Z." Но
+если число дробное, то для него выводить упрощенную информацию (положительное, дробное).
+Если введено не число, тогда возвращает текст "Х - не является числом."
+9) Функция, которая спрашивает у пользователя: "Введите любое число, чтобы его проанализировать."
+И потом выводит алерт с подробностями о введенном значении.
+Если пользователь нажимает отмену - алерт с текстом: "Попробуем в другой раз."
+
+А потом сделать так, чтобы при рефреше браузера предложение провести анализ числа появлялось 3 раза.
+<script>
+	function isNumber(num) {
+		return ((num > 0 || num <= 0) && num !== '' && num !== true);
+	}
+
+	function checkEvenNumber(num) {
+		return (num % 2 === 0);
+	}
+
+	function checkPositiveNumber(num) {
+		return (num > 0);
+	}
+
+	function checkSimpleNumber(num) {
+		const positiveNum = Math.abs(num);
+
+		let isNumberSimple = true;
+
+		for (let i = 2; i < positiveNum; i++) {
+			if (positiveNum % i === 0) {
+				isNumberSimple = false;
+				break;
+			}
+		}
+
+		return isNumberSimple;
+	}
+
+	function checkFractionalNumber(num) {
+		return (num - Math.floor(num) !== 0);
+	}
+
+	function getSequenceSum(num) {
+		const positiveNum = Math.abs(num);
+
+		let sum = 0;
+
+		for (let i = 0; i <= positiveNum; i++) {
+			sum += i;
+		}
+
+		return sum = (checkPositiveNumber(num)) ? sum : -sum;
+	}
+
+	function getGeometricProgression(num) {
+		const positiveNum = Math.abs(num);
+
+		let result = 1;
+
+		for (let i = 1; i <= positiveNum; i++) {
+			result *= i;
+		}
+
+		if (!checkPositiveNumber(num)) {
+			result = (checkEvenNumber(num)) ? result : -result
+		}
+
+		return result;
+	}
+
+	function showNumberInformation(num) {
+		let numberInfo = `Число ${num} - `;
+
+		if (isNumber(num)) {
+			if (!checkFractionalNumber(num)) {
+				numberInfo += (checkEvenNumber(num)) ? 'четное, ' : 'нечетное, ';
+				numberInfo += (checkPositiveNumber(num)) ? 'положительное, ' : 'отридцательное, ';
+				numberInfo += (checkSimpleNumber(num)) ? 'простое, ' : 'сложное, ';
+				numberInfo += 'целое. ';
+				numberInfo += 'Арифметическая прогрессия = '+getSequenceSum(num)+'. ';
+				numberInfo += 'Геометрическая прогрессия = '+getGeometricProgression(num)+'.';
+			} else {
+				numberInfo += (checkPositiveNumber(num)) ? 'положительное, ' : 'отридцательное, ';
+				numberInfo += 'дробное. ';
+			}
+		} else {
+			numberInfo = `${num} - не является числом.`;
+		}
+
+		return numberInfo;
+	}
+
+	function showUserNumberInformation() {
+		let num = prompt('Введите любое число, чтобы его проанализировать.');
+
+		if (num !== null) {
+			alert(showNumberInformation(num));
+		} else {
+			alert('Попробуем в другой раз.');
+		}
+	}
+
+	showUserNumberInformation();
+	showUserNumberInformation();
+	showUserNumberInformation();
+</script>
+</body>
+</html>
