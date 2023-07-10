@@ -26,33 +26,33 @@
 А потом сделать так, чтобы при рефреше браузера предложение провести анализ числа появлялось 3 раза.
 <script>
 	function isNumber(num) {
-		return ((num > 0 || num <= 0) && num !== '' && num !== true);
+		return ((num > 0 || num <= 0) && num !== '' && num !== true && num !== false);
 	}
 
-	function checkEvenNumber(num) {
+	function isNumberEven(num) {
 		return (num % 2 === 0);
 	}
 
-	function checkPositiveNumber(num) {
+	function isNumberPositive(num) {
 		return (num > 0);
 	}
 
-	function checkSimpleNumber(num) {
+	function isNumberSimple(num) {
 		const positiveNum = Math.abs(num);
 
-		let isNumberSimple = true;
+		let isNumSimple = true;
 
 		for (let i = 2; i < positiveNum; i++) {
 			if (positiveNum % i === 0) {
-				isNumberSimple = false;
+				isNumSimple = false;
 				break;
 			}
 		}
 
-		return isNumberSimple;
+		return isNumSimple;
 	}
 
-	function checkFractionalNumber(num) {
+	function isNumberFractional(num) {
 		return (num - Math.floor(num) !== 0);
 	}
 
@@ -65,7 +65,7 @@
 			sum += i;
 		}
 
-		return sum = (checkPositiveNumber(num)) ? sum : -sum;
+		return (isNumberPositive(num)) ? sum : -sum;
 	}
 
 	function getGeometricProgression(num) {
@@ -77,8 +77,8 @@
 			result *= i;
 		}
 
-		if (!checkPositiveNumber(num)) {
-			result = (checkEvenNumber(num)) ? result : -result
+		if (!isNumberPositive(num)) {
+			result = (isNumberEven(num)) ? result : -result
 		}
 
 		return result;
@@ -88,15 +88,15 @@
 		let numberInfo = `Число ${num} - `;
 
 		if (isNumber(num)) {
-			if (!checkFractionalNumber(num)) {
-				numberInfo += (checkEvenNumber(num)) ? 'четное, ' : 'нечетное, ';
-				numberInfo += (checkPositiveNumber(num)) ? 'положительное, ' : 'отридцательное, ';
-				numberInfo += (checkSimpleNumber(num)) ? 'простое, ' : 'сложное, ';
+			if (!isNumberFractional(num)) {
+				numberInfo += (isNumberEven(num)) ? 'четное, ' : 'нечетное, ';
+				numberInfo += (isNumberPositive(num)) ? 'положительное, ' : 'отридцательное, ';
+				numberInfo += (isNumberSimple(num)) ? 'простое, ' : 'сложное, ';
 				numberInfo += 'целое. ';
-				numberInfo += 'Арифметическая прогрессия = '+getSequenceSum(num)+'. ';
-				numberInfo += 'Геометрическая прогрессия = '+getGeometricProgression(num)+'.';
+				numberInfo += `Арифметическая прогрессия = ${getSequenceSum(num)}. `;
+				numberInfo += `Геометрическая прогрессия = ${getGeometricProgression(num)}.`;
 			} else {
-				numberInfo += (checkPositiveNumber(num)) ? 'положительное, ' : 'отридцательное, ';
+				numberInfo += (isNumberPositive(num)) ? 'положительное, ' : 'отридцательное, ';
 				numberInfo += 'дробное. ';
 			}
 		} else {
